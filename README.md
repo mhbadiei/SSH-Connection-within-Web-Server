@@ -1,9 +1,8 @@
 # SSH-Connection-within-Web-Server
 
+This repository provides a solution for establishing SSH (Secure Shell) connections within a web server environment. SSH is a secure and encrypted protocol used for remote access to servers and devices. The ability to initiate SSH connections from a web server can be useful for various purposes, such as managing remote servers, automating tasks, or providing a web-based interface for users to access SSH services.
 
 ![Project Image](https://github.com/mhbadiei/SSH-Connection-within-Web-Server/blob/main/Image.png)
-
-This repository provides a solution for establishing SSH (Secure Shell) connections within a web server environment. SSH is a secure and encrypted protocol used for remote access to servers and devices. The ability to initiate SSH connections from a web server can be useful for various purposes, such as managing remote servers, automating tasks, or providing a web-based interface for users to access SSH services.
 
 ## Features
 * Web-Based SSH Client: This repository includes a web-based SSH client that allows users to connect to remote servers securely through a web browser. Users can input their SSH credentials and access the remote server's command-line interface.
