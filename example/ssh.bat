@@ -1,0 +1,1 @@
+plink -v 192.168.1.1 -l #name -pw #pass -ssh free -m

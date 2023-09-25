@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="libs/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form
+        v-on:submit.prevent="connect(credentials)"
+		id="ssh_connection"
+      >
+		
+		<div class="row">
+        
+		<label for="ssh"> <h1>SSH Connection</h1> </label>			
+		 <input class="form-control" type="text" v-model="credentials.command" id="ssh" placeholder="Please insert an ip to make a ssh connection"  
+                          required>
+        </div>
+		
+		<div class="row">
+        
+		<button
+          id="mybutton"
+          class="btn btn-block"
+          type="submit"
+        >
+          connect
+        </button>
+		</div>
+  </form>
+    </div>
+
+    <script src="libs/jquery/jquery-3.5.1.min.js"></script>
+    <script src="libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="libs/vue/vue.min.js"></script>
+    <script src="../../libs/vue/vue.min.js"></script>
+	<script>
+		new Vue({
+		  el: "#ssh_connection",
+		  data: {
+			credentials: {
+			  command: ""
+			},
+		  },
+		  methods: {
+			connect: function (credentials) {
+			  $.ajax({
+				url: "/data",
+				contentType:'application/json',
+				data: JSON.stringify(credentials),
+				method:'post'      
+			  })
+				.done(function (res) {
+				   console.log(res)
+				   credentials.command = ""
+				   //location.href = "/";
+				})
+				.fail(function (err) {
+				   console.log(err)	
+				});
+			},
+		  },
+		});
+
+    </script>
+  </body>
+</html>
